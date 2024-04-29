@@ -24,6 +24,8 @@ class Model {
         color = Color.RED; // Default color
     }
 
+
+
     // Getters and setters for size, type, and color
 }
 
@@ -31,6 +33,7 @@ class View {
     private Model model;
     private JFrame frame;
     private JPanel iconPanel;
+    private JLabel iconLabel;
     private JSlider sizeSlider;
     private JButton rectangleButton;
     private JButton eclipseButton;
@@ -44,9 +47,24 @@ class View {
     }
 
     public void createAndShowGUI() {
-        // Create GUI components and layout
+        frame = new JFrame("Icon Application");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        // Add event listeners to components
+        iconPanel = new JPanel();
+        iconLabel = new JLabel();
+        sizeSlider = new JSlider();
+        rectangleButton = new JButton();
+        eclipseButton = new JButton();
+        triangleButton = new JButton();
+        triangleButton = new JButton();
+        redButton = new JButton();
+        blueButton = new JButton();
+        yellowButton = new JButton();
+        updateIcon(); // Update icon label initially
+        iconPanel.add(iconLabel);
+        frame.add(iconPanel);
+        frame.pack();
+        frame.setVisible(true);
     }
 
     // Update icon display based on model changes
