@@ -1,0 +1,33 @@
+@startuml
+class Model {
+    - size: int
+    - type: String
+    - color: Color
+    + getSize(): int
+    + setSize(size: int): void
+    + getType(): String
+    + setType(type: String): void
+    + getColor(): Color
+    + setColor(color: Color): void
+}
+
+class View {
+    # model: Model
+    + createAndShowGUI(): void
+    + updateIcon(): void
+}
+
+class Controller {
+    # model: Model
+    # view: View
+    + Controller(model: Model, view: View)
+    + handleUserInput(): void
+}
+
+Model -- Controller
+View -- Controller
+Controller *-- Model : composition
+Controller *-- View : composition
+@enduml
+
+
